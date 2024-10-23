@@ -8,22 +8,18 @@ android {
     compileSdkVersion 30
 
     // Add the namespace property (mandatory for AGP 7.0.0+)
-    namespace "com.befovy.fijkplayer"
+    namespace "com.befovy.fijkplayer"  // Correctly specify the namespace here
 
     defaultConfig {
-        // Minimum SDK version your app supports
         minSdkVersion 16
-
-        // Test instrumentation runner for unit tests
+        targetSdkVersion 30
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    // Configure lint options
     lintOptions {
         disable 'InvalidPackage'
     }
 
-    // Optional: Configure compile options for Java compatibility (if needed)
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
@@ -31,12 +27,7 @@ android {
 }
 
 dependencies {
-    // Uncomment the following if you're using the AAR file
-    // implementation(name: 'fijkplayer-full-release', ext: 'aar')
-
-    // Include the fijkplayer full library (version 0.7.16) with support for multiple architectures
+    // fijkplayer-full includes the java lib and native shared libs for armv5 armv7 arm64 x86 x86_64
     implementation 'com.befovy.fijkplayer:fijkplayer-full:0.7.16'
-
-    // Add androidx annotation library for compatibility with AndroidX
     implementation 'androidx.annotation:annotation:1.2.0'
 }
