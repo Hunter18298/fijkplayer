@@ -4,11 +4,10 @@ version '0.11.0'
 apply plugin: 'com.android.library'
 
 android {
-    // Specify the SDK version used to compile the project
-    compileSdkVersion 30
+    compileSdkVersion 30  // You can update this to 33 or higher based on your project
 
-    // Add the namespace property (mandatory for AGP 7.0.0+)
-    namespace "com.befovy.fijkplayer"  // Correctly specify the namespace here
+    // Correctly specify the namespace for this plugin
+    namespace "com.befovy.fijkplayer"
 
     defaultConfig {
         minSdkVersion 16
@@ -27,7 +26,6 @@ android {
 }
 
 dependencies {
-    // fijkplayer-full includes the java lib and native shared libs for armv5 armv7 arm64 x86 x86_64
     implementation 'com.befovy.fijkplayer:fijkplayer-full:0.7.16'
     implementation 'androidx.annotation:annotation:1.2.0'
 }
